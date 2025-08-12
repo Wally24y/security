@@ -1,0 +1,161 @@
+<button id="restoreDb">Restore Database</button>
+
+const restoreDb = document.getElementById('restoreDb');
+if (restoreDb) {
+  restoreDb.addEventListener('click', async function () {
+    const confirmRestore = confirm("⚠️ Are you sure you want to restore the database?\nThis will replace the current data.");
+    if (!confirmRestore) return;
+
+    const msg = await window.pywebview.api.restore_database();
+    alert(msg);
+    hideDatabaseTable(); // Optional: Clear any old data view
+  });
+}
+def restore_database(self):
+    return restore_database()
+
+def restore_database(self):
+    root = tk.Tk()
+    root.withdraw()
+    file_path = filedialog.askopenfilename(
+        title="Select backup database to restore",
+        filetypes=[("Database files", "*.db"), ("All files", "*.*")]
+    )
+    root.destroy()
+    if not file_path:
+        return "Restore canceled."
+
+    try:
+        shutil.copy(file_path, Database1)
+        return f"✅ Database restored from: {file_path}"
+    except Exception as e:
+        return f"❌ Restore failed: {str(e)}"
+
+search options
+
+<div>
+  <label for="searchType">Search By:</label>
+  <select id="searchType">
+    <option value="name">Visitor Name</option>
+    <option value="phone">Phone Number</option>
+    <option value="id">TAA ID No.</option>
+  </select>
+</div>
+<div>
+  <label for="searchInput">Search Value:</label>
+  <input type="text" id="searchInput" placeholder="Enter value...">
+</div>
+
+js
+const fetchBtn = document.getElementById('fetchBtn');
+if (fetchBtn) {
+  fetchBtn.addEventListener('click', async function () {
+    const searchType = document.getElementById('searchType').value;
+    const searchValue = document.getElementById('searchInput').value.trim();
+
+    if (!searchValue) {
+      alert("Please enter a value to search.");
+      return;
+    }
+
+    let backendInput = searchValue;
+
+    // Optionally, you can prefix values for smarter matching later
+    if (searchType === 'name') {
+      backendInput = searchValue;  // could also add prefix like `name:John`
+    } else if (searchType === 'phone') {
+      backendInput = searchValue;
+    } else if (searchType === 'id') {
+      backendInput = searchValue;
+    }
+
+    const visitor = await window.pywebview.api.get_visitor_pending_checkout(backendInput);
+
+    if (!visitor) {
+      alert("No visitor found with the provided information.");
+      return;
+    }
+
+    // Autofill the form with visitor info
+    setFieldValue('visitor_id', visitor.id);
+    setFieldValue('visitors_name', visitor.visitors_name);
+    setFieldValue('date', visitor.date);
+    setFieldValue('company', visitor.company);
+    setFieldValue('phone_no', visitor.phone_no);
+    setFieldValue('going_to', visitor.going_to);
+    setFieldValue('id_type', visitor.id_type);
+    setFieldValue('id_no', visitor.id_no);  // new field
+    setFieldValue('time_in', visitor.time_in);
+    setFieldValue('avsec_name', visitor.avsec_name);
+    setFieldValue('time_out', ''); // Leave blank for manual check-out
+  });
+}
+document.getElementById('searchInput').value = '';
+
+autoguess:
+remove:<label for="searchType">Search By:</label>
+<select id="searchType">...</select>
+
+replace with
+<div>
+  <label for="searchInput">Search:</label>
+  <input type="text" id="searchInput" placeholder="Enter name, phone, or ID">
+</div>
+
+const fetchBtn = document.getElementById('fetchBtn');
+if (fetchBtn) {
+  fetchBtn.addEventListener('click', async function () {
+    const rawInput = document.getElementById('searchInput').value.trim();
+    if (!rawInput) {
+      alert("Please enter a value to search.");
+      return;
+    }
+
+    // Auto-detect input type
+    let guess = "";
+    const onlyDigits = /^\d+$/;
+    const hasLetters = /[a-zA-Z]/;
+
+    if (onlyDigits.test(rawInput)) {
+      guess = "phone"; // likely phone number
+    } else if (hasLetters.test(rawInput) && /\d/.test(rawInput)) {
+      guess = "id"; // likely ID number
+    } else {
+      guess = "name"; // likely full name
+    }
+
+    console.log("Search type guessed:", guess); // for debugging
+
+    const visitor = await window.pywebview.api.get_visitor_pending_checkout(rawInput);
+
+    if (!visitor) {
+      alert("No matching visitor found.");
+      return;
+    }
+
+    // Fill the form
+    setFieldValue('visitor_id', visitor.id);
+    setFieldValue('visitors_name', visitor.visitors_name);
+    setFieldValue('date', visitor.date);
+    setFieldValue('company', visitor.company);
+    setFieldValue('phone_no', visitor.phone_no);
+    setFieldValue('going_to', visitor.going_to);
+    setFieldValue('id_type', visitor.id_type);
+    setFieldValue('id_no', visitor.id_no);
+    setFieldValue('time_in', visitor.time_in);
+    setFieldValue('avsec_name', visitor.avsec_name);
+    setFieldValue('time_out', '');
+  });
+}
+
+want to add another column ....place it after init_all()
+def update_schema():
+    conn = sqlite3.connect("visitors.db")
+    cursor = conn.cursor()
+    # Only adds if it doesn’t exist
+    try:
+        cursor.execute("ALTER TABLE visitors ADD COLUMN badge_number TEXT DEFAULT ''")
+        conn.commit()
+    except sqlite3.OperationalError as e:
+        print("Column may already exist or another error:", e)
+    conn.close()

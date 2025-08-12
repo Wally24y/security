@@ -1,0 +1,496 @@
+body{
+    font-size: 2.2rem;
+    margin: 0;
+    height: 100%;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;       /* ✅ Allow scrolling when content exceeds view */
+    display: flex;
+    flex-direction: column; /* ⛔️ This was blocking vertical scrolling */
+}
+#body444{
+    background-image: url("images/Full_view.png");
+}
+#body111{
+    background-image: url("images/FRONT.jpg");
+}
+#body33{
+    background-image: url("images/T.png");
+}
+#body55{
+    background-image: url("images/download1.jpeg");
+}
+#body33,#body111,#body444,#body55{
+    background-size: 100% 100%;
+    background-position: center ;
+    background-attachment: fixed;  /* optional: for parallax effect */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+form{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input,select{
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0);
+    padding: 2px 8px;
+}
+input:active,select:active{
+    background-color: rgba(255, 255, 255, 0.582);
+}
+input:hover{
+    background-color: rgba(240, 248, 255, 0.897);
+}
+form div{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    margin-bottom:3px;
+}
+form div input{
+    min-width: 360px;
+    height: 29px;
+    font-size: 1.1rem;
+    padding-left: 5px;
+}
+.bottom1,.bottom2{
+    margin: 0 auto;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+.bottom1 button,.bottom2 button{
+    font-size: 1.45rem;
+    border-radius: 10px;
+    padding: 6px 20px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.bottom1 button:hover,.bottom2 button:hover,.section4 button:hover{
+    color: rgba(255, 255, 255, 0.829);
+}
+.bottom1 button:active,.bottom2 button:active,.section4 button:active{
+    opacity: 0.6 ;
+}
+.submit1,.submit2{
+    background-color: green;
+}
+.admin1,.home1{
+    background-color: navy;
+}
+.exit1,.exit2{
+    background-color: red;
+}
+
+.h1{
+    display: flex;
+    margin: 0 0 26px 0;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgb(90, 3, 3) !important;
+}
+
+.patel section{
+    width: 80%;
+    margin: 4% auto auto auto;
+    background-color: rgba(19, 49, 146, 0);
+    padding: 20px;
+    border-radius: 30px;
+    padding-top: 100px;
+}
+.patel .div1{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    align-items: center;
+}
+.bottom2{
+    width: 55%;
+    margin-top: 6px;
+}
+.bottom2 button,.section4 button{
+    font-size: 1.3rem;
+}
+.patel input{
+    height: 2.5rem;
+    font-size: 1.5rem;
+    padding-left: 5px;
+}
+.div1 label{
+    font-size: 3.5rem;
+}
+.div1 button{
+    font-size: 4rem;
+}
+.section4{
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    margin: 0 auto;
+}
+.section4 button{
+    border-radius: 10px;
+    padding: 5.5px 16px;
+    cursor: pointer;
+}
+.section4a{
+    width: 30px;
+    margin: 10px auto 0 auto;
+}
+.section4a #homeBtn{
+    cursor: pointer;
+    color: navy;
+}
+.section4a #homeBtn:hover{
+    color: rgba(0, 0, 128, 0.74);
+}
+.section4a #homeBtn:active{
+    color: rgb(1, 1, 19);
+}
+#welcome200,#h22,.h1{
+    color: navy;
+    letter-spacing: -3px;
+    transform: scaleY(1.8);
+}
+#welcome200{
+    letter-spacing: -3px;
+}
+#welcome202{
+   display: flex;
+   justify-content: center;
+}
+#showBtn{
+    background-color: blue;
+}
+#openExportPanel{
+    background-color: green;
+}
+#backupDb{
+    background-color: purple;
+}
+#full{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+#h22{
+    color: navy;
+}
+.h1{
+    letter-spacing: 1px;
+}
+.h22{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    margin: 10px 0;
+    font-size: 4rem;
+}
+
+#body33 input{
+    background-color: rgba(255, 255, 255, 0.705);
+}
+#exportExcel{
+    background-color: rgba(0, 128, 0, 0.925);
+}
+#exportPdf{
+    background-color: rgba(255, 0, 0, 0.863);
+}
+
+h3{
+    margin: 10px 0;
+}
+#exportPanel .div{
+    margin: 4px 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#exportpanel h3{
+    color: red;
+}
+#divexport{
+    display: flex;
+    justify-content: space-between;
+}
+#dataTable{
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.884);
+}
+#exportPanel input{
+    width: 141px;
+}
+button{
+    border: none;
+}
+#h22{
+    margin-bottom: 20px;
+}
+
+
+@media screen and (max-width:1200px)  {
+    #body33 input{
+        min-width:  300px;
+    }
+    #welcome200{
+        font-size: 3.8rem;
+    }
+}
+@media screen and (max-width:1030px)  {
+   .patel input{
+        height: 2.3rem;
+        font-size: 1.4rem;
+    }
+    .div1 label{
+        font-size: 3.3rem;
+    }
+    .div1 button{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width:930px)  {
+    #welcome200{
+        font-size: 3.6rem;
+    }
+    #dataTable{
+        font-size: 1.2rem;
+    }
+    .patel input{
+        height: 2.1rem;
+        font-size: 1.3rem;
+    }
+    .div1 label{
+        font-size: 3.1rem;
+    }
+    .div1 button{
+        font-size: 4rem;
+    }
+    .bottom1{
+        width: 60%;
+    }
+    .bottom1 button{
+    font-size: 1.45rem;
+    padding: 6px 15px;
+    }
+}
+@media screen and (max-width:830px)  {
+    h2{
+        margin: 10px 0;
+        font-size: 3.4rem;
+    }
+    #welcome200{
+        font-size: 3.4rem;
+    }
+    .h22{
+        transform: scaleY(1.2);
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+    #visitorform div label{
+        font-size: 2rem;
+    }
+    .label{
+        font-size: 2rem;
+    }
+    #dataTable{
+        font-size: 1.1rem;
+    }
+    .letterSp{
+        letter-spacing: -1px;
+    }
+     .patel input{
+        height: 2.2rem;
+        font-size: 1.3rem;
+    }
+    .div1 label{
+        font-size: 2.9rem;
+    }
+    .div1 button{
+        font-size: 4rem;
+    }
+    .patel section{
+        width: 85%;
+    }
+}
+@media screen and (max-width:730px)  {
+    body{
+        flex-shrink: 0;
+    }
+    #welcome200{
+        font-size: 3.2rem;
+    }
+     .letterSp{
+        letter-spacing: -2px;
+    }
+     .patel input{
+        height: 2.2rem;
+        font-size: 1.2rem;
+    }
+    .div1 label{
+        font-size: 2.7rem;
+    }
+    .div1 button{
+        font-size: 4rem;
+    }
+    .patel section{
+        width: 85%;
+    }
+     #dataTable{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:630px)  {
+    #welcome200{
+        font-size: 3rem;
+    }
+     .letterSp{
+        letter-spacing: -3px;
+    }
+     .patel input{
+        height: 2rem;
+        font-size: 1.1rem;
+    }
+    .div1 label{
+        font-size: 2.5rem;
+    }
+    .div1 button{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width:530px)  {
+    #welcome200{
+        font-size: 2.8rem;
+    }
+     .patel input{
+        height: 2rem;
+        font-size: 1.1rem;
+    }
+    .div1 label{
+        font-size: 2.5rem;
+    }
+    .div1 button{
+        font-size: 4rem;
+    }
+}
+
+table {
+    border-collapse: collapse; /* merges borders into single lines */
+    width: 88%; /* optional width */
+}
+
+table, th, td {
+    border: 1px solid black; /* border on table, header cells, data cells */
+    margin: 20px auto;
+}
+
+th, td {
+    padding: 2px; /* space inside cells */
+    text-align: center; /* center text inside cells */
+}
+th{
+    font-weight: bolder;
+}
+
+.autofill-highlight {
+  animation: highlight 1s ease;
+}
+@keyframes highlight {
+  0% { background-color: #fffaa8; }
+  100% { background-color: white; }
+}
+#submitBtn:disabled {
+  background-color: #ccc !important;
+  color: #3b3939 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+/* Status box styling */
+.status {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+  display: none;
+  font-size: 1.5rem;
+  margin: 4px auto 0 auto;
+  border-radius: 14px;
+}
+
+.status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+.fetch1{
+    background-color: rgb(124, 71, 6);
+}
+.clear1{
+    background-color: red;
+}
+
+#body55{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: linear-gradient(blue,grey,white);
+}
+#body55 h2{
+    font-size: 3.35rem;
+}
+#body55 h3{
+    font-size: 3.25rem;
+    margin-top: 0;
+}
+#body55 p{
+    font-size: 2.4rem;
+    margin: 0 0 10px 0;
+}
+#body55 h1{
+    margin: 8% 0 0 0;
+}
+#body55 div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#body55 input{
+    font-size: 1.3rem;
+    padding: 4px 8px;
+}
+#body55 button{
+    font-size: 1.4rem;
+    border-radius: 10px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+#checkinBtn{
+    background-color: rgb(112, 16, 202);
+}
+#adminBtn1{
+    background-color: navy;
+}
+#body55 label{
+    color: rgb(7, 236, 236);
+    margin-right: 10px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="static/flatpickr.min.css">
+</head>
+<body id="body111">
+    <form action="" method="POST" id="visitorform" >
+        <input type="hidden" id="visitor_id">
+        <div class="h22">
+            <h2 id="h22">VISITORS CHECK-IN</h2>
+        </div>
+        <div>
+            <label for="DATE">DATE:</label>
+            <input type="text" name="DATE" id="date">
+        </div>
+        <div>
+            <label for="VISITOR" class="letterSp">VISITOR NAME:</label>
+            <input type="text" name="VISITOR" id="visitors_name" required>
+        </div>
+        <div>
+            <label for="COMPANY">COMPANY:</label>
+            <input type="text" name="COMPANY" id="company" required>
+        </div>
+        <div>
+            <label for="PHONE NO.">PHONE NO.:</label>
+            <input type="text" name="PHONE NO." id="phone_no" required>
+        </div>
+        <div>
+            <label for="GOING">GOING TO:</label>
+            <select name="GOING-TO" id="going_to">
+                <option value="Administration Block">Administration Block</option>
+                <option value="Temporary Work">Temporary Work</option>
+                <option value="ON DUTY">ON DUTY</option>
+                <option value="off">gc</option>
+            </select>
+        </div>
+        <div>
+            <label for="V_ID">ID. TYPE:</label>
+            <select name="V_ID" id="id_type">
+                <option value="NIDA">NIDA</option>
+                <option value="Drivers">Driver's license</option>
+                <option value="Voter">Voter's ID</option>
+                <option value="School">School/University ID</option>
+                <option value="Passport">Passport</option>
+                <option value="NHIF">NHIF/Health Insuarances</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div>
+            <label for="ID_TYPE">TAA ID. NO:</label>
+            <input type="text" name="ID_TYPE" id="id_no" required>
+        </div>
+        <div>
+            <label for="TIME_IN">TIME IN:</label>
+            <input type="time" name="TIME_IN" id="time_in" required>
+        </div>
+        <div>
+             <label for="TIME_OUT">TIME OUT:</label>
+            <input type="time" name="TIME_OUT" id="time_out">
+        </div>
+        <div>
+            <label for="AVSEC_NAME" class="letterSp">AVSEC NAME:</label>
+            <input type="text" name="AVSEC_NAME" id="avsec_name" readonly>  
+        </div>
+        <div class="bottom1">
+            <button class="submit1" id="submit1" type="submit" >Submit</button>
+            <button class="fetch1" type="button" id="fetchBtn">Fetch</button>
+            <button class="clear1" type="button" id="clearBtn">Clear</button>
+            <button class="admin1" type="button" id="admin1">Admin</button>
+        </div>
+        <div id="statusMessage" class="status" style="display: none;"></div>
+    </form>
+    <script src="index.js"></script>
+    <script src="static/flatpickr.min.js"></script>
+    <script>
+       flatpickr("#date", {
+            dateFormat: "Y-m-d",
+            altInput: true,            // show a different display format
+            altFormat: "F j, Y",       // e.g., "July 16, 2025" as display
+            allowInput: true,
+            defaultDate: "today"       // pre-fill with today's date
+        });
+
+    </script>
+</body>
+</html>

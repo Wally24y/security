@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin_page</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="images/fontello/css/fontello.css">
+</head>
+<body id="body444">
+    <div id="welcome202">
+        <h1 id="welcome200">WELCOME TO ADMIN-PAGE</h1>
+    </div>
+    <section class="section4">
+        <div>
+            <button id="showBtn" type="button">Database</button>
+        </div>
+        <div >
+            <button id="openExportPanel" type="button">Export</button>
+            <!-- Hidden export panel -->
+            <div id="exportPanel" style=" border-radius: 10px;border: 2px solid blue; display:none; padding:0 16px 16px 16px; margin-top:10px;">
+                <h3>Sort by:</h3>
+                <div class="div">
+                    <label>From :</label>
+                    <input type="date" id="filterFromDate">
+                </div>
+                <div class="div">
+                    <label>Up to :</label>
+                    <input type="date" id="filterDate">
+                </div>
+                <div class="div">
+                    <label class="label">Going To:</label>
+                    <select id="filterDestination">
+                        <option value="all">All</option>
+                        <option value="Administration Block">Administration Block</option>
+                        <option value="Temporary Work">Temporary Work</option>
+                        <option value="Warehouse">Warehouse</option>
+                        <!-- add more as needed -->
+                    </select>
+                </div>
+  
+            <div id="divexport" style="margin-top:10px;">
+                <button id="exportPdf">PDF</button>
+                <button id="exportExcel">Excel</button>
+            </div>
+        </div>
+        </div>
+        <div>
+            <button id="backupDb" type="button">Backup</button>
+        </div>
+    </section>
+    <div class="section4a">
+        <i class="icon-home" id="homeBtn"></i>
+      <!--  <a href="" ><img src="images/download (1).png" alt="" ></a>-->
+    </div>
+    <div id="dataTable"></div>
+    <script src="index.js"></script>
+    <script src="static/jspdf.umd.min.js"></script>
+    <script src="static/xlsx.full.min.js"></script>
+    <script src="static/jspdf.plugin.autotable.min.js"></script>
+
+</body>
+</html>
